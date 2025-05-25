@@ -60,7 +60,7 @@ def ocr_endpoint():
 
 
 HF_API_URL = "https://api-inference.huggingface.co/models/facebook/bart-large-cnn"
-HF_API_KEY = os.getenv("HF_API_KEY", "")  # Default key as fallback
+HF_API_KEY = os.getenv("HF_API_KEY", "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")  # Default key as fallback
 
 @app.route('/summarize', methods=['POST'])
 def summarize():
