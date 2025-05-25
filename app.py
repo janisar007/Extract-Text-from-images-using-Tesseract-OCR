@@ -6,12 +6,15 @@ import io
 import os
 import requests
 from flask_cors import CORS
+import platform
 
 app = Flask(__name__)
 
 CORS(app)
 # Configure Tesseract path (keep your existing configuration)
-pytesseract.pytesseract.tesseract_cmd = r'c:\Program Files\Tesseract-OCR\tesseract.exe'
+# Only set tesseract path on Windows
+if platform.system() == 'Windows':
+    pytesseract.pytesseract.tesseract_cmd = r'c:\Program Files\Tesseract-OCR\tesseract.exe'
 
 def extract_text_from_image(image):
     try:
